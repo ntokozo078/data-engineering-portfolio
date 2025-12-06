@@ -1749,8 +1749,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const userMessageInput = document.getElementById('userMessage');
   const sendBtn = document.getElementById('sendBtn');
 
-  if (!openBtn || !closeBtn) return; // Guard if elements missing
+  if (!openBtn || !closeBtn) return; 
 
+  // Toggle Widget Visibility
   openBtn.addEventListener('click', () => {
     chatWidget.style.display = 'flex';
     userMessageInput.focus();
@@ -1760,8 +1761,6 @@ document.addEventListener('DOMContentLoaded', () => {
     chatWidget.style.display = 'none';
   });
 
-
-  
   function addMessage(text, sender) {
     const msgDiv = document.createElement('div');
     msgDiv.classList.add('message', sender);
@@ -1774,36 +1773,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = userMessageInput.value.trim();
     if (!message) return;
 
+    // 1. Add User Message
     addMessage(message, 'user');
     userMessageInput.value = '';
+
+    // 2. Add "Thinking..." Placeholder
     addMessage("Thinking...", 'bot');
     const thinkingEl = chatMessages.lastElementChild;
 
-
-     try {
-      // 🔁 LOCAL DEV: http://localhost:3000/api/chat
-      // 🌐 PROD: https://your-vercel-app.vercel.app/api/chat
-      const response = await fetch('http://localhost:3000/api/chat', {
+    try {
+      // ✅ CORRECTED LINE: Use relative path (works on Vercel AND Localhost)
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message })
       });
 
-      const data = await response.json();
-      thinkingEl.remove();
+      if (!response.ok) throw new Error('Network response was not ok');
 
+      const data = await response.json();
+      
+      // 3. Success: Remove "Thinking..." and show real answer
+      thinkingEl.remove();
       if (data.reply) {
         addMessage(data.reply, 'bot');
       } else {
-        throw new Error('No reply');
+        throw new Error('No reply from AI');
       }
+
     } catch (error) {
-      console.warn('AI API failed. Using fallback.');
-      thinkingEl.remove();
+      console.warn('AI API failed. Using fallback logic.', error);
+      
+      // 4. Failure: Remove "Thinking..." and show fallback answer
+      if(thinkingEl) thinkingEl.remove();
 
-
-     const lower = message.toLowerCase();
+      const lower = message.toLowerCase();
       let reply = "I'm Ntokozo's AI assistant! Ask about his data engineering work, projects, or how to contact him.";
+      
       if (lower.includes('skill') || lower.includes('know')) {
         reply = "He works with Python, SQL, Airflow, AWS, GCP, Spark, Docker, and ETL pipelines.";
       } else if (lower.includes('project')) {
@@ -1818,11 +1824,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Event Listeners for Sending
   sendBtn.addEventListener('click', sendMessage);
   userMessageInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') sendMessage();
   });
-});// 
+});
     </script>
 </body>
 </html>
