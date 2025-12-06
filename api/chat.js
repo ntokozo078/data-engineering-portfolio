@@ -48,9 +48,8 @@ export default async function handler(req, res) {
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
     
-    // ✅ FIX: Use the specific pinned version 'gemini-1.5-flash-001'
-    // This is more stable than the generic aliases.
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-001" });
+    // ✅ UPDATED: Using the model confirmed by your test script
+const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
     const systemPrompt = `
       You are the AI portfolio assistant for Ntokozo Ntombela.
