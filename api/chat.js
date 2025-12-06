@@ -51,8 +51,8 @@ export default async function handler(req, res) {
   // --- 3. AI GENERATION LOGIC ---
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
-    // Using the Flash model for speed and free tier limits
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+   // Switch to "gemini-pro" (The most stable free model)
+   const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
     const systemPrompt = `
       You are the AI portfolio assistant for Ntokozo Ntombela.
