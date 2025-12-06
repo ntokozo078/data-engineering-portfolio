@@ -1,0 +1,124 @@
+/* =========== FULL CSS FROM YOUR DESIGN =========== */
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #1abc9c;
+    --light: #ffffff;
+    --dark: #000000;
+    --text: #333333;
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --border: #e9ecef;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+}
+.dark-mode {
+    --primary: #3498db;
+    --secondary: #2c3e50;
+    --accent: #1abc9c;
+    --light: #1a1a1a;
+    --dark: #ffffff;
+    --text: #e0e0e0;
+    --bg: #121212;
+    --card-bg: #1e1e1e;
+    --border: #333333;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg);
+    transition: var(--transition);
+}
+
+/* =========== NEW: AI CHAT WIDGET STYLES =========== */
+.ai-assistant {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.assistant-header {
+    background: var(--primary);
+    color: white;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.chat-box {
+    height: 250px;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: var(--bg);
+    font-size: 0.95rem;
+}
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background: var(--card-bg);
+}
+.chat-input input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--bg);
+    color: var(--text);
+}
+.send-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========== EXISTING STYLES (truncated for brevity) =========== */
+/* Paste ALL your original CSS here from the <style> tag EXCEPT the new chat styles above */
+/* ... (full CSS from your HTML's <style> block) ... */
+
+/* Responsive for chat */
+@media (max-width: 768px) {
+    .ai-assistant {
+        width: 90vw;
+        right: 5vw;
+    }
+}

@@ -1,0 +1,268 @@
+{
+  "personal": {
+    "name": "Ntokozo Ntombela",
+    "title": "Data Engineer | ICT Graduate",
+    "location": "Durban, South Africa",
+    "summary": "A dedicated ICT Graduate from DUT with a strong portfolio in data engineering, automated ETL pipelines, and cloud-native analytics. Transitioning from software engineering to data, I focus on building efficient systems that turn raw data into actionable insights using Python, SQL, Azure, and Databricks."
+  },
+  "contact": {
+    "email": "ntombelan098@gmail.com",
+    "github": "https://github.com/ntokozo078",
+    "linkedin": "https://www.linkedin.com/in/ntokozo-ntombela-ba662235a/",
+    "portfolio": "https://ntokozo078.github.io"
+  },
+  "specialities": {
+    "core": [
+      "Data Engineering Pipelines",
+      "ETL/ELT Automation",
+      "Medallion Architecture",
+      "Apache Spark (PySpark)",
+      "Databricks Lakehouse",
+      "Azure Data Services",
+      "Advanced SQL",
+      "REST API Integration",
+      "Flask (Backend)",
+      "Python Automation",
+      "Cybersecurity Fundamentals"
+    ],
+    "programming": [
+      "Python",
+      "SQL",
+      "C#",
+      "Java",
+      "HTML/CSS",
+      "JavaScript",
+      "Bash/Shell"
+    ],
+    "cloud_platforms": [
+      "Azure",
+      "Databricks",
+      "Render",
+      "Firebase",
+      "AWS (Foundational)"
+    ],
+    "tools": [
+      "Git & GitHub",
+      "VS Code",
+      "Linux (CLI)",
+      "Power BI",
+      "Jupyter Notebooks",
+      "Docker"
+    ]
+  },
+  "certifications": {
+    "completed": [
+      {
+        "name": "IBM Spark Fundamentals I",
+        "issuer": "IBM SkillsBuild",
+        "date": "Nov 2025",
+        "status": "completed",
+        "icon": "✔",
+        "focus": "Big Data"
+      },
+      {
+        "name": "Microsoft Azure Data Fundamentals (DP-900)",
+        "issuer": "Microsoft",
+        "date": "2025",
+        "status": "completed",
+        "icon": "✔",
+        "focus": "Cloud Data"
+      },
+      {
+        "name": "Databricks for Data Engineering",
+        "issuer": "Databricks",
+        "date": "Nov 2025",
+        "status": "completed",
+        "icon": "✔",
+        "focus": "Lakehouse Architecture"
+      },
+      {
+        "name": "FNB App Academy 2025",
+        "issuer": "FNB",
+        "date": "2025",
+        "status": "completed",
+        "icon": "✔",
+        "focus": "Full Stack Engineering"
+      },
+      {
+        "name": "Introduction to Cybersecurity",
+        "issuer": "Cisco Networking Academy",
+        "date": "May 2025",
+        "status": "completed",
+        "icon": "✔",
+        "focus": "Security"
+      },
+      {
+        "name": "Linux Unhatched",
+        "issuer": "Cisco Networking Academy",
+        "date": "Oct 2024",
+        "status": "completed",
+        "icon": "✔",
+        "focus": "Infrastructure"
+      },
+      {
+        "name": "Google Cloud Skills Boost – Data, ML & Analytics Path",
+        "status": "completed",
+        "icon": "✔"
+      },
+      {
+        "name": "AWS Certified Cloud Practitioner",
+        "status": "completed",
+        "icon": "✔"
+      }
+    ],
+    "in_progress": [
+      {
+        "name": "Azure Data Engineer Associate (DP-203)",
+        "status": "in_progress",
+        "icon": "⚠"
+      }
+    ],
+    "planned": [
+      {
+        "name": "Databricks Data Engineer Associate",
+        "status": "planned",
+        "icon": "⭐"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "DevPulse: Real-Time Job Tracker",
+      "subtitle": "Full-Stack Data Engineering",
+      "tech_stack": [
+        "Flask",
+        "SQLAlchemy",
+        "Pandas",
+        "Regex NLP",
+        "BeautifulSoup",
+        "Render",
+        "Gunicorn"
+      ],
+      "summary": "A comprehensive data application. Built an automated ETL pipeline that scrapes job data via API, extracts 20+ technical skills using NLP/Regex, creates a relational database, and visualizes live market trends on an interactive dashboard.",
+      "live_url": "https://devpulse-job-tracker.onrender.com",
+      "github_url": "https://github.com/ntokozo078/devpulse-job-tracker",
+      "outcome": "Deployed a self-healing pipeline that tracks demand for skills like Python and AWS in real-time.",
+      "type": "Data Engineering",
+      "priority": 1
+    },
+    {
+      "name": "Automated Data Extraction Engine",
+      "subtitle": "Python ETL Scripting",
+      "tech_stack": [
+        "Python",
+        "Requests",
+        "BeautifulSoup",
+        "JSON",
+        "Pandas"
+      ],
+      "summary": "A robust scraping engine designed to ingest raw market data from the Adzuna API. It handles pagination, cleans messy HTML content, normalizes currency formats, and structures data for downstream database loading.",
+      "github_url": "https://github.com/ntokozo078/devpulse-job-tracker/tree/main/etl",
+      "outcome": "Automated the data collection process, reducing manual research time to zero.",
+      "type": "Data Engineering",
+      "priority": 2
+    },
+    {
+      "name": "Databricks Medallion Sales Pipeline",
+      "subtitle": "Cloud Big Data",
+      "tech_stack": [
+        "Databricks",
+        "PySpark",
+        "Delta Lake",
+        "Medallion Architecture"
+      ],
+      "summary": "An end-to-end cloud pipeline processing sales data. Implemented a Bronze (Raw) → Silver (Cleaned) → Gold (Aggregated) workflow using PySpark and Delta Tables to ensure data quality for business reporting.",
+      "github_url": "https://github.com/ntokozo078/databricks-medallion-sales-pipeline",
+      "outcome": "Demonstrated mastery of modern Lakehouse architecture principles.",
+      "type": "Cloud Engineering",
+      "priority": 3
+    },
+    {
+      "name": "Intelligent File System Automator",
+      "subtitle": "System Automation",
+      "tech_stack": [
+        "Python",
+        "OS Module",
+        "Shutil",
+        "Automation"
+      ],
+      "summary": "A utility script that solves data disorganization. It scans directories, identifies file signatures (extensions), and automatically sorts thousands of files into logical folders (Images, Docs, Code) instantly.",
+      "github_url": "https://github.com/ntokozo078",
+      "outcome": "Showcased ability to write efficient Python scripts for system administration tasks.",
+      "type": "Automation",
+      "priority": 4
+    },
+    {
+      "name": "Peer Tutoring Platform",
+      "subtitle": "Android + Cloud DB",
+      "tech_stack": [
+        "Java",
+        "Firebase Auth",
+        "Firestore NoSQL",
+        "XML"
+      ],
+      "summary": "Developed the backend logic for a tutoring match system. Implemented real-time data syncing using Firestore listeners and secure user authentication.",
+      "type": "Mobile Backend",
+      "priority": 5
+    },
+    {
+      "name": "Digital Voting System",
+      "subtitle": "Secure Backend",
+      "tech_stack": [
+        "Flask",
+        "PostgreSQL",
+        "BCrypt",
+        "SQLAlchemy"
+      ],
+      "summary": "Backend voting system with strict integrity constraints. Designed normalized relational models for candidates and votes, ensuring secure and auditable election results.",
+      "type": "Full-Stack Engineering",
+      "priority": 6
+    }
+  ],
+  "education": {
+    "degree": "Bachelor of Information & Communication Technology (BICT)",
+    "institution": "Durban University of Technology",
+    "year": "Graduated",
+    "completion_date": "2025",
+    "status": "Completed",
+    "key_modules": [
+      "Business Intelligence & Data Warehousing",
+      "Software Engineering III",
+      "Machine Intelligence & AI",
+      "Advanced Programming",
+      "Cloud Computing Fundamentals",
+      "Networks & Cybersecurity Basics",
+      "Database Systems"
+    ]
+  },
+  "goals": {
+    "career_targets": [
+      "Junior Data Engineer",
+      "Junior Cloud Engineer",
+      "Backend Developer (Data Focus)"
+    ],
+    "short_term": [
+      "Secure a graduate role in 2025",
+      "Pass Azure Data Engineer Associate (DP-203)",
+      "Build a streaming pipeline with Kafka/Event Hubs"
+    ],
+    "long_term": [
+      "Become a Senior Cloud Data Architect",
+      "Specialize in Real-Time Big Data Processing",
+      "Lead data infrastructure projects for global tech firms"
+    ]
+  },
+  "strengths": [
+    "Bridging Software Engineering & Data Engineering",
+    "Building real, deployed applications",
+    "Strong Cybersecurity & Network fundamentals",
+    "Comfortable with Cloud Workflows (Azure/Render)",
+    "Fast learner with a research-driven mindset",
+    "Independent problem solver"
+  ],
+  "areas_for_growth": [
+    "Deepen Azure Data Factory practical experience",
+    "Implement a real-time streaming project (Kafka)",
+    "Advanced SQL performance tuning"
+  ]
+}
