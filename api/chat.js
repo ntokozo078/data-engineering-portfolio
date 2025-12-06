@@ -1,27 +1,26 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export default async function handler(req, res) {
-  // --- 1. CONFIGURATION & DATA ---
-  // We hardcode this data here to prevent "File Not Found" errors on the server
+  // --- 1. HARDCODED DATA (Safe Mode) ---
   const portfolioData = {
     "personal": {
       "name": "Ntokozo Ntombela",
       "role": "Data Engineer",
-      "intro": "I am a Final-year ICT student and aspiring Data Engineer specializing in ETL pipelines, Cloud Analytics, and Automation."
+      "summary": "Final-year ICT student and aspiring Data Engineer specializing in ETL pipelines, Cloud Analytics, and Automation."
     },
     "skills": [
-      "Python", "SQL", "Apache Spark", "Azure Data Factory", 
-      "Databricks", "Power BI", "Airflow", "ETL/ELT"
+      "Python", "SQL", "Apache Spark", "Azure Data Factory", "Databricks", 
+      "Power BI", "Medallion Architecture", "Airflow"
     ],
     "projects": [
       {
         "name": "Cloud-Scale Urban Mobility Analytics",
-        "tools": "Azure Data Factory, SQL, Power BI",
-        "desc": "End-to-end cloud pipeline analyzing urban traffic data."
+        "tech": "Azure Data Factory, SQL, Power BI",
+        "desc": "An end-to-end cloud pipeline analyzing urban traffic data."
       },
       {
         "name": "Job Market Analysis Pipeline",
-        "tools": "Python, BeautifulSoup, Pandas",
+        "tech": "Python, BeautifulSoup, Pandas",
         "desc": "Automated scraper and ETL pipeline to track job market trends."
       }
     ],
@@ -31,8 +30,7 @@ export default async function handler(req, res) {
     }
   };
 
-  // --- 2. SECURITY CHECKS ---
-  // Only allow POST requests (sending messages)
+  // --- 2. CONFIG CHECKS ---
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -40,50 +38,44 @@ export default async function handler(req, res) {
   const { message } = req.body;
   const apiKey = process.env.GEMINI_API_KEY;
 
-  // DEBUG: Check if the key exists on the server
   if (!apiKey) {
     console.error("❌ API Key is missing.");
     return res.status(200).json({ 
-      reply: "⚠️ System Error: The API Key is missing in Vercel Settings. Please add GEMINI_API_KEY." 
+      reply: "⚠️ System Error: The API Key is missing in Vercel Settings." 
     });
   }
 
-  // --- 3. AI GENERATION LOGIC ---
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
-   // Switch to "gemini-pro" (The most stable free model)
-   const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    
+    // ✅ FIX: Use the specific pinned version 'gemini-1.5-flash-001'
+    // This is more stable than the generic aliases.
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-001" });
 
     const systemPrompt = `
       You are the AI portfolio assistant for Ntokozo Ntombela.
+      Knowledge Base: ${JSON.stringify(portfolioData)}
       
-      Your Knowledge Base:
-      ${JSON.stringify(portfolioData)}
-
       Instructions:
-      1. Answer the user's question based strictly on the data above.
-      2. Be friendly, professional, and concise.
-      3. If asked about contact info, give the email.
-      4. If asked about something not in the data, politely say you only know about Ntokozo's professional work.
-
+      1. Answer ONLY using the provided data.
+      2. Be friendly and professional.
+      3. If asked for contact info, provide the email.
+      
       User Question: "${message}"
     `;
 
-    // Send to Google
     const result = await model.generateContent(systemPrompt);
     const response = await result.response;
     const text = response.text();
 
-    // Success! Send the answer back to the chat
-    return res.status(200).json({ reply: text });
+    res.status(200).json({ reply: text });
 
   } catch (error) {
-    // --- 4. ERROR HANDLING ---
     console.error("Gemini API Error:", error);
     
-    // Send the specific error to the chat so we can fix it
+    // If even this fails, we send a helpful debug message
     return res.status(200).json({ 
-      reply: `❌ Google API Error: ${error.message}. (Please check your Vercel logs or API Key)` 
+      reply: `❌ Google Error: ${error.message}. (Try visiting https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey} to see which models are active for your key)` 
     });
   }
 }
