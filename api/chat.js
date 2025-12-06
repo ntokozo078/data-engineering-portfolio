@@ -1,82 +1,89 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// 1. Define your Context (The "Brain")
-const context = `
-Name: Ntokozo Ntombela
-Role: Aspiring Data Engineer & Final-Year ICT Student at Durban University of Technology
-Email: ntombelan098@gmail.com
-GitHub: https://github.com/ntokozo078
-LinkedIn: https://www.linkedin.com/in/ntokozo-ntombela-ba662235a/
-Skills: Python, SQL, Airflow, AWS, GCP, Spark, Docker, ETL/ELT
-Projects: Job Market Pipeline, Cloud ETL (Airflow + BigQuery), E-commerce Data Warehouse
-Goal: Become a Cloud Data Engineer
-`;
-
 export default async function handler(req, res) {
-  // Only allow POST
+  // --- 1. CONFIGURATION & DATA ---
+  // We hardcode this data here to prevent "File Not Found" errors on the server
+  const portfolioData = {
+    "personal": {
+      "name": "Ntokozo Ntombela",
+      "role": "Data Engineer",
+      "intro": "I am a Final-year ICT student and aspiring Data Engineer specializing in ETL pipelines, Cloud Analytics, and Automation."
+    },
+    "skills": [
+      "Python", "SQL", "Apache Spark", "Azure Data Factory", 
+      "Databricks", "Power BI", "Airflow", "ETL/ELT"
+    ],
+    "projects": [
+      {
+        "name": "Cloud-Scale Urban Mobility Analytics",
+        "tools": "Azure Data Factory, SQL, Power BI",
+        "desc": "End-to-end cloud pipeline analyzing urban traffic data."
+      },
+      {
+        "name": "Job Market Analysis Pipeline",
+        "tools": "Python, BeautifulSoup, Pandas",
+        "desc": "Automated scraper and ETL pipeline to track job market trends."
+      }
+    ],
+    "contact": {
+      "email": "ntombelan098@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/ntokozo-ntombela-ba662235a/"
+    }
+  };
+
+  // --- 2. SECURITY CHECKS ---
+  // Only allow POST requests (sending messages)
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   const { message } = req.body;
+  const apiKey = process.env.GEMINI_API_KEY;
 
-  // --- STRATEGY 1: TRY GOOGLE GEMINI (The Fast/Smart Way) ---
-  if (process.env.GEMINI_API_KEY) {
-    try {
-      const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-      const systemPrompt = `You are Ntokozo's professional AI assistant. 
-      Use this profile context to answer: ${context}
-      User Question: ${message}
-      Answer concisely and professionally.`;
-
-      const result = await model.generateContent(systemPrompt);
-      const response = await result.response;
-      const text = response.text();
-
-      return res.status(200).json({ reply: text });
-
-    } catch (error) {
-      console.error("Gemini failed, switching to backup:", error.message);
-      // Don't return error yet! We will let it fall through to Strategy 2.
-    }
+  // DEBUG: Check if the key exists on the server
+  if (!apiKey) {
+    console.error("❌ API Key is missing.");
+    return res.status(200).json({ 
+      reply: "⚠️ System Error: The API Key is missing in Vercel Settings. Please add GEMINI_API_KEY." 
+    });
   }
 
-  // --- STRATEGY 2: FALLBACK TO OPENROUTER (Your Original Code) ---
-  if (process.env.OPENROUTER_API_KEY) {
-    try {
-      const prompt = `You are Ntokozo's AI assistant. Answer briefly.
-      Context: ${context}
-      User: "${message}"`;
+  // --- 3. AI GENERATION LOGIC ---
+  try {
+    const genAI = new GoogleGenerativeAI(apiKey);
+    // Using the Flash model for speed and free tier limits
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
-          'Content-Type': 'application/json',
-          'HTTP-Referer': 'https://ntokozo078.github.io',
-          'X-Title': 'Ntokozo Portfolio'
-        },
-        body: JSON.stringify({
-          model: 'mistralai/mistral-7b-instruct:free',
-          messages: [{ role: 'user', content: prompt }]
-        })
-      });
-
-      if (!response.ok) throw new Error(`OpenRouter Error: ${response.status}`);
+    const systemPrompt = `
+      You are the AI portfolio assistant for Ntokozo Ntombela.
       
-      const data = await response.json();
-      const reply = data.choices?.[0]?.message?.content?.trim();
-      return res.status(200).json({ reply });
+      Your Knowledge Base:
+      ${JSON.stringify(portfolioData)}
 
-    } catch (error) {
-      console.error("OpenRouter failed:", error.message);
-    }
+      Instructions:
+      1. Answer the user's question based strictly on the data above.
+      2. Be friendly, professional, and concise.
+      3. If asked about contact info, give the email.
+      4. If asked about something not in the data, politely say you only know about Ntokozo's professional work.
+
+      User Question: "${message}"
+    `;
+
+    // Send to Google
+    const result = await model.generateContent(systemPrompt);
+    const response = await result.response;
+    const text = response.text();
+
+    // Success! Send the answer back to the chat
+    return res.status(200).json({ reply: text });
+
+  } catch (error) {
+    // --- 4. ERROR HANDLING ---
+    console.error("Gemini API Error:", error);
+    
+    // Send the specific error to the chat so we can fix it
+    return res.status(200).json({ 
+      reply: `❌ Google API Error: ${error.message}. (Please check your Vercel logs or API Key)` 
+    });
   }
-
-  // --- STRATEGY 3: FINAL FAILSAFE ---
-  return res.status(200).json({ 
-    reply: "I'm currently updating my servers. Please contact Ntokozo directly at ntombelan098@gmail.com." 
-  });
 }
