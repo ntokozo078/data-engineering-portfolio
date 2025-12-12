@@ -60,6 +60,12 @@
         "icon": "✔",
         "focus": "Big Data"
       },
+      { 
+        "name": "Academy Accreditation - Databricks Fundamentals", 
+        "issuer": "Databricks", 
+        "date": "Nov 2025", 
+        "focus": "Data Intelligence Platform" 
+      },
       {
         "name": "Microsoft Azure Data Fundamentals (DP-900)",
         "issuer": "Microsoft",
