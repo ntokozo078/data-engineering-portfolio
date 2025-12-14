@@ -19,10 +19,11 @@
       "Apache Spark (PySpark)",
       "Databricks Lakehouse",
       "Azure Data Services",
-      "Advanced SQL",
+      "Advanced SQL & PostgreSQL",
       "REST API Integration",
       "Flask (Backend)",
-      "Python Automation",
+      "AI Model Integration",
+      "Containerization (Docker)",
       "Cybersecurity Fundamentals"
     ],
     "programming": [
@@ -37,7 +38,7 @@
     "cloud_platforms": [
       "Azure",
       "Databricks",
-      "Render",
+      "Render (Cloud Hosting)",
       "Firebase",
       "AWS (Foundational)"
     ],
@@ -47,7 +48,9 @@
       "Linux (CLI)",
       "Power BI",
       "Jupyter Notebooks",
-      "Docker"
+      "Docker",
+      "PostgreSQL",
+      "Cron Jobs & Scheduling"
     ]
   },
   "certifications": {
@@ -134,6 +137,41 @@
   },
   "projects": [
     {
+      "name": "SA Job Market Pipeline & Tracker",
+      "subtitle": "Advanced ETL & Analytics",
+      "tech_stack": [
+        "Python",
+        "PostgreSQL",
+        "Flask",
+        "BeautifulSoup",
+        "Render Cron",
+        "Chart.js"
+      ],
+      "summary": "A robust daily automated pipeline that aggregates tech jobs from APIs and web scrapers. Implemented a 'Zombie Job' filter to remove expired listings, deduplication logic, and SCD Type 1 storage in PostgreSQL. Visualizes hiring trends via a responsive dashboard.",
+      "live_url": "https://devpulse-job-tracker.onrender.com",
+      "github_url": "https://github.com/ntokozo078/devpulse-job-tracker",
+      "outcome": "Automated the entire data lifecycle from ingestion to visualization, creating a clean historical dataset of the SA tech market.",
+      "type": "Data Engineering",
+      "priority": 1
+    },
+    {
+      "name": "AI Lyric Video Generator",
+      "subtitle": "AI Pipeline & Containerization",
+      "tech_stack": [
+        "Flask",
+        "Faster-Whisper",
+        "MoviePy",
+        "Docker",
+        "FFmpeg"
+      ],
+      "summary": "A cloud-native media processing app. Integrates the Faster-Whisper AI model for precise audio transcription and MoviePy for dynamic text overlays. Containerized with Docker to run efficiently on low-memory cloud tiers without crashing.",
+      "live_url": "https://lyric-video-gen.onrender.com",
+      "github_url": "https://github.com/ntokozo078/lyric-video-gen",
+      "outcome": "Successfully deployed a resource-heavy AI/Video pipeline on free-tier infrastructure using advanced optimization and Docker.",
+      "type": "AI Engineering",
+      "priority": 2
+    },
+    {
       "name": "DevPulse: Real-Time Job Tracker",
       "subtitle": "Full-Stack Data Engineering",
       "tech_stack": [
@@ -142,15 +180,29 @@
         "Pandas",
         "Regex NLP",
         "BeautifulSoup",
-        "Render",
-        "Gunicorn"
+        "Render"
       ],
       "summary": "A comprehensive data application. Built an automated ETL pipeline that scrapes job data via API, extracts 20+ technical skills using NLP/Regex, creates a relational database, and visualizes live market trends on an interactive dashboard.",
       "live_url": "https://devpulse-job-tracker.onrender.com",
       "github_url": "https://github.com/ntokozo078/devpulse-job-tracker",
       "outcome": "Deployed a self-healing pipeline that tracks demand for skills like Python and AWS in real-time.",
       "type": "Data Engineering",
-      "priority": 1
+      "priority": 3
+    },
+    {
+      "name": "Databricks Medallion Sales Pipeline",
+      "subtitle": "Cloud Big Data",
+      "tech_stack": [
+        "Databricks",
+        "PySpark",
+        "Delta Lake",
+        "Medallion Architecture"
+      ],
+      "summary": "An end-to-end cloud pipeline processing sales data. Implemented a Bronze (Raw) → Silver (Cleaned) → Gold (Aggregated) workflow using PySpark and Delta Tables to ensure data quality for business reporting.",
+      "github_url": "https://github.com/ntokozo078/databricks-medallion-sales-pipeline",
+      "outcome": "Demonstrated mastery of modern Lakehouse architecture principles.",
+      "type": "Cloud Engineering",
+      "priority": 4
     },
     {
       "name": "Automated Data Extraction Engine",
@@ -166,22 +218,7 @@
       "github_url": "https://github.com/ntokozo078/devpulse-job-tracker/tree/main/etl",
       "outcome": "Automated the data collection process, reducing manual research time to zero.",
       "type": "Data Engineering",
-      "priority": 2
-    },
-    {
-      "name": "Databricks Medallion Sales Pipeline",
-      "subtitle": "Cloud Big Data",
-      "tech_stack": [
-        "Databricks",
-        "PySpark",
-        "Delta Lake",
-        "Medallion Architecture"
-      ],
-      "summary": "An end-to-end cloud pipeline processing sales data. Implemented a Bronze (Raw) → Silver (Cleaned) → Gold (Aggregated) workflow using PySpark and Delta Tables to ensure data quality for business reporting.",
-      "github_url": "https://github.com/ntokozo078/databricks-medallion-sales-pipeline",
-      "outcome": "Demonstrated mastery of modern Lakehouse architecture principles.",
-      "type": "Cloud Engineering",
-      "priority": 3
+      "priority": 5
     },
     {
       "name": "Intelligent File System Automator",
@@ -196,7 +233,7 @@
       "github_url": "https://github.com/ntokozo078",
       "outcome": "Showcased ability to write efficient Python scripts for system administration tasks.",
       "type": "Automation",
-      "priority": 4
+      "priority": 6
     },
     {
       "name": "Peer Tutoring Platform",
@@ -209,7 +246,7 @@
       ],
       "summary": "Developed the backend logic for a tutoring match system. Implemented real-time data syncing using Firestore listeners and secure user authentication.",
       "type": "Mobile Backend",
-      "priority": 5
+      "priority": 7
     },
     {
       "name": "Digital Voting System",
@@ -222,7 +259,7 @@
       ],
       "summary": "Backend voting system with strict integrity constraints. Designed normalized relational models for candidates and votes, ensuring secure and auditable election results.",
       "type": "Full-Stack Engineering",
-      "priority": 6
+      "priority": 8
     }
   ],
   "education": {
