@@ -219,3 +219,53 @@ body {
     background: var(--accent, #007bff);
     color: white;
 }
+
+/* Grid Layout for Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Tablet: 2 Columns */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 Column */
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Styling for the "Incoming" Black Card */
+.project-card.incoming {
+    background: #1a1a1a; /* Dark Black/Grey */
+    color: #fff;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 400px; /* Match other cards */
+}
+
+.project-card.incoming i {
+    font-size: 3rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.project-card.incoming h3 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.project-card.incoming p {
+    color: #888;
+}
