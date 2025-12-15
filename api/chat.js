@@ -1,4 +1,3 @@
-// Switch to CommonJS (require) to fix compilation warnings
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 module.exports = async function (req, res) {
@@ -39,14 +38,15 @@ module.exports = async function (req, res) {
   const apiKey = process.env.GEMINI_API_KEY;
 
   if (!apiKey) {
-    return res.status(200).json({ reply: "⚠️ System Error: API Key is missing in Vercel settings." });
+    return res.status(200).json({ reply: "⚠️ System Error: API Key is missing." });
   }
 
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
     
-    // Using the standard 1.5 Flash model
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    // ✅ FIX: Using "gemini-1.5-flash-001" (The specific stable version number)
+    // This is safer than "latest" or generic names.
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-001" });
 
     // --- 3. INSTRUCTIONS ---
     const systemPrompt = `
@@ -72,7 +72,6 @@ module.exports = async function (req, res) {
 
   } catch (error) {
     console.error("Gemini API Error:", error);
-    // ✅ THIS IS THE FIX: Show the real error so we can fix it!
     return res.status(200).json({ 
       reply: `❌ AI Error: ${error.message}` 
     });
