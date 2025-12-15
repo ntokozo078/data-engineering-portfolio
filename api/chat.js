@@ -29,7 +29,6 @@ module.exports = async function (req, res) {
     "contact": "ntombelan098@gmail.com"
   };
 
-  // --- 2. SERVER LOGIC ---
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -44,22 +43,16 @@ module.exports = async function (req, res) {
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
     
-    // ✅ FIX: Use "gemini-pro" (The most stable, widely available model)
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    // Attempting the most standard model first
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    // --- 3. INSTRUCTIONS ---
     const systemPrompt = `
       You are Ntokozo's portfolio assistant.
-      
       DATA: ${JSON.stringify(portfolioData)}
-
       RULES:
       1. Keep response UNDER 20 WORDS.
-      2. Do NOT use bold text (no asterisks).
-      3. Do NOT write paragraphs.
-      4. If asked about a project, mention ONE project briefly and ask: "Want to hear about another?"
-      5. Be casual and chatty.
-
+      2. Do NOT use bold text.
+      3. Be casual.
       User asked: "${message}"
     `;
 
@@ -70,9 +63,24 @@ module.exports = async function (req, res) {
     res.status(200).json({ reply: text });
 
   } catch (error) {
-    console.error("Gemini API Error:", error);
-    return res.status(200).json({ 
-      reply: `❌ AI Error: ${error.message}` 
-    });
+    console.error("Gemini Error:", error);
+    
+    // --- 🔍 DEBUGGER: LIST AVAILABLE MODELS ---
+    try {
+        // This manually asks Google: "What models ARE allowed for this key?"
+        const listReq = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+        const listData = await listReq.json();
+        
+        // Extract just the names
+        const modelNames = listData.models 
+            ? listData.models.map(m => m.name.replace('models/', '')) 
+            : ["No models found (Check your API Key permissions)"];
+
+        return res.status(200).json({ 
+            reply: `❌ DEBUG MODE: The model failed. \n\n Here are the models your key CAN access: \n ${modelNames.join(", ")}` 
+        });
+    } catch (e) {
+        return res.status(200).json({ reply: `❌ Critical Error: ${error.message}` });
+    }
   }
 };
