@@ -44,9 +44,8 @@ module.exports = async function (req, res) {
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
     
-    // ✅ FIX: Using "gemini-1.5-flash-001" (The specific stable version number)
-    // This is safer than "latest" or generic names.
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-001" });
+    // ✅ FIX: Use "gemini-pro" (The most stable, widely available model)
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
     // --- 3. INSTRUCTIONS ---
     const systemPrompt = `
