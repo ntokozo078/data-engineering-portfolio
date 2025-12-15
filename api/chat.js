@@ -1,6 +1,7 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+// Switch to CommonJS (require) to fix compilation warnings
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-export default async function handler(req, res) {
+module.exports = async function (req, res) {
   // --- 1. YOUR KNOWLEDGE BASE ---
   const portfolioData = {
     "personal": {
@@ -29,6 +30,7 @@ export default async function handler(req, res) {
     "contact": "ntombelan098@gmail.com"
   };
 
+  // --- 2. SERVER LOGIC ---
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -37,15 +39,16 @@ export default async function handler(req, res) {
   const apiKey = process.env.GEMINI_API_KEY;
 
   if (!apiKey) {
-    return res.status(200).json({ reply: "System Error: API Key missing." });
+    return res.status(200).json({ reply: "⚠️ System Error: API Key is missing in Vercel settings." });
   }
 
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
-    // Use the stable flash model
+    
+    // Using the standard 1.5 Flash model
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    // --- 2. STRICT SHORT INSTRUCTIONS ---
+    // --- 3. INSTRUCTIONS ---
     const systemPrompt = `
       You are Ntokozo's portfolio assistant.
       
@@ -53,7 +56,7 @@ export default async function handler(req, res) {
 
       RULES:
       1. Keep response UNDER 20 WORDS.
-      2. Do NOT use bold text (no **asterisks**).
+      2. Do NOT use bold text (no asterisks).
       3. Do NOT write paragraphs.
       4. If asked about a project, mention ONE project briefly and ask: "Want to hear about another?"
       5. Be casual and chatty.
@@ -69,6 +72,9 @@ export default async function handler(req, res) {
 
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return res.status(200).json({ reply: "My brain is tired. Try again!" });
+    // ✅ THIS IS THE FIX: Show the real error so we can fix it!
+    return res.status(200).json({ 
+      reply: `❌ AI Error: ${error.message}` 
+    });
   }
-}
+};
