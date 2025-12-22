@@ -14,6 +14,7 @@
   "specialities": {
     "core": [
       "Data Engineering Pipelines",
+      "Dimensional Modeling (Star Schema)",
       "ETL/ELT Automation",
       "Medallion Architecture",
       "Apache Spark (PySpark)",
@@ -23,8 +24,7 @@
       "REST API Integration",
       "Flask (Backend)",
       "AI Model Integration",
-      "Containerization (Docker)",
-      "Cybersecurity Fundamentals"
+      "Containerization (Docker)"
     ],
     "programming": [
       "Python",
@@ -45,12 +45,12 @@
     "tools": [
       "Git & GitHub",
       "VS Code",
-      "Linux (CLI)",
+      "Streamlit",
       "Power BI",
       "Jupyter Notebooks",
       "Docker",
       "PostgreSQL",
-      "Cron Jobs & Scheduling"
+      "Cron Jobs"
     ]
   },
   "certifications": {
@@ -108,16 +108,6 @@
         "status": "completed",
         "icon": "✔",
         "focus": "Infrastructure"
-      },
-      {
-        "name": "Google Cloud Skills Boost – Data, ML & Analytics Path",
-        "status": "completed",
-        "icon": "✔"
-      },
-      {
-        "name": "AWS Certified Cloud Practitioner",
-        "status": "completed",
-        "icon": "✔"
       }
     ],
     "in_progress": [
@@ -137,57 +127,22 @@
   },
   "projects": [
     {
-      "name": "SA Job Market Pipeline & Tracker",
-      "subtitle": "Advanced ETL & Analytics",
+      "name": "InsightOps – E-commerce BI System",
+      "subtitle": "Data Warehousing & BI",
       "tech_stack": [
         "Python",
-        "PostgreSQL",
-        "Flask",
-        "BeautifulSoup",
-        "Render Cron",
-        "Chart.js"
-      ],
-      "summary": "A robust daily automated pipeline that aggregates tech jobs from APIs and web scrapers. Implemented a 'Zombie Job' filter to remove expired listings, deduplication logic, and SCD Type 1 storage in PostgreSQL. Visualizes hiring trends via a responsive dashboard.",
-      "live_url": "https://devpulse-job-tracker.onrender.com",
-      "github_url": "https://github.com/ntokozo078/devpulse-job-tracker",
-      "outcome": "Automated the entire data lifecycle from ingestion to visualization, creating a clean historical dataset of the SA tech market.",
-      "type": "Data Engineering",
-      "priority": 1
-    },
-    {
-      "name": "AI Lyric Video Generator",
-      "subtitle": "AI Pipeline & Containerization",
-      "tech_stack": [
-        "Flask",
-        "Faster-Whisper",
-        "MoviePy",
-        "Docker",
-        "FFmpeg"
-      ],
-      "summary": "A cloud-native media processing app. Integrates the Faster-Whisper AI model for precise audio transcription and MoviePy for dynamic text overlays. Containerized with Docker to run efficiently on low-memory cloud tiers without crashing.",
-      "live_url": "https://lyric-video-gen.onrender.com",
-      "github_url": "https://github.com/ntokozo078/lyric-video-gen",
-      "outcome": "Successfully deployed a resource-heavy AI/Video pipeline on free-tier infrastructure using advanced optimization and Docker.",
-      "type": "AI Engineering",
-      "priority": 2
-    },
-    {
-      "name": "DevPulse: Real-Time Job Tracker",
-      "subtitle": "Full-Stack Data Engineering",
-      "tech_stack": [
-        "Flask",
-        "SQLAlchemy",
+        "SQLite",
+        "Star Schema",
+        "Streamlit",
         "Pandas",
-        "Regex NLP",
-        "BeautifulSoup",
-        "Render"
+        "Plotly"
       ],
-      "summary": "A comprehensive data application. Built an automated ETL pipeline that scrapes job data via API, extracts 20+ technical skills using NLP/Regex, creates a relational database, and visualizes live market trends on an interactive dashboard.",
-      "live_url": "https://devpulse-job-tracker.onrender.com",
-      "github_url": "https://github.com/ntokozo078/devpulse-job-tracker",
-      "outcome": "Deployed a self-healing pipeline that tracks demand for skills like Python and AWS in real-time.",
-      "type": "Data Engineering",
-      "priority": 3
+      "summary": "A production-grade Business Intelligence system implementing a Star Schema data warehouse with surrogate keys. It features a full ETL pipeline that transforms raw e-commerce data into actionable KPIs (Revenue, Churn, Profit) and visualizes them on an interactive dashboard with automated alerts.",
+      "live_url": "https://ntokozo078--insightops-e-commerce-pipelines-dashboardapp-vbz2ih.streamlit.app/",
+      "github_url": "https://github.com/ntokozo078/InsightOps_E-commerce-pipelines",
+      "outcome": "Built a scalable dimensional model and automated reporting system, solving real business problems like churn analysis and profit tracking.",
+      "type": "Data Warehousing",
+      "priority": 1
     },
     {
       "name": "Databricks Medallion Sales Pipeline",
@@ -202,7 +157,59 @@
       "github_url": "https://github.com/ntokozo078/databricks-medallion-sales-pipeline",
       "outcome": "Demonstrated mastery of modern Lakehouse architecture principles.",
       "type": "Cloud Engineering",
+      "priority": 2
+    },
+    {
+      "name": "SA Job Market Pipeline & Tracker",
+      "subtitle": "Advanced ETL & Analytics",
+      "tech_stack": [
+        "Python",
+        "PostgreSQL",
+        "Flask",
+        "BeautifulSoup",
+        "Render Cron"
+      ],
+      "summary": "A robust daily automated pipeline that aggregates tech jobs from APIs and web scrapers. Implemented a 'Zombie Job' filter to remove expired listings, deduplication logic, and SCD Type 1 storage in PostgreSQL.",
+      "live_url": "https://devpulse-job-tracker.onrender.com",
+      "github_url": "https://github.com/ntokozo078/devpulse-job-tracker",
+      "outcome": "Automated the entire data lifecycle from ingestion to visualization, creating a clean historical dataset of the SA tech market.",
+      "type": "Data Engineering",
+      "priority": 3
+    },
+    {
+      "name": "AI Lyric Video Generator",
+      "subtitle": "AI Pipeline & Containerization",
+      "tech_stack": [
+        "Flask",
+        "Faster-Whisper",
+        "MoviePy",
+        "Docker",
+        "FFmpeg"
+      ],
+      "summary": "A cloud-native media processing app. Integrates the Faster-Whisper AI model for precise audio transcription and MoviePy for dynamic text overlays. Containerized with Docker to run efficiently on low-memory cloud tiers.",
+      "live_url": "https://lyric-video-gen.onrender.com",
+      "github_url": "https://github.com/ntokozo078/lyric-video-gen",
+      "outcome": "Successfully deployed a resource-heavy AI/Video pipeline on free-tier infrastructure using advanced optimization and Docker.",
+      "type": "AI Engineering",
       "priority": 4
+    },
+    {
+      "name": "DevPulse: Real-Time Job Tracker",
+      "subtitle": "Full-Stack Data Engineering",
+      "tech_stack": [
+        "Flask",
+        "SQLAlchemy",
+        "Pandas",
+        "Regex NLP",
+        "BeautifulSoup",
+        "Render"
+      ],
+      "summary": "A comprehensive data application. Built an automated ETL pipeline that scrapes job data via API, extracts 20+ technical skills using NLP/Regex, creates a relational database, and visualizes live market trends.",
+      "live_url": "https://devpulse-job-tracker.onrender.com",
+      "github_url": "https://github.com/ntokozo078/devpulse-job-tracker",
+      "outcome": "Deployed a self-healing pipeline that tracks demand for skills like Python and AWS in real-time.",
+      "type": "Data Engineering",
+      "priority": 5
     },
     {
       "name": "Automated Data Extraction Engine",
@@ -218,7 +225,7 @@
       "github_url": "https://github.com/ntokozo078/devpulse-job-tracker/tree/main/etl",
       "outcome": "Automated the data collection process, reducing manual research time to zero.",
       "type": "Data Engineering",
-      "priority": 5
+      "priority": 6
     },
     {
       "name": "Intelligent File System Automator",
@@ -233,7 +240,7 @@
       "github_url": "https://github.com/ntokozo078",
       "outcome": "Showcased ability to write efficient Python scripts for system administration tasks.",
       "type": "Automation",
-      "priority": 6
+      "priority": 7
     },
     {
       "name": "Peer Tutoring Platform",
@@ -246,7 +253,7 @@
       ],
       "summary": "Developed the backend logic for a tutoring match system. Implemented real-time data syncing using Firestore listeners and secure user authentication.",
       "type": "Mobile Backend",
-      "priority": 7
+      "priority": 8
     },
     {
       "name": "Digital Voting System",
@@ -259,7 +266,7 @@
       ],
       "summary": "Backend voting system with strict integrity constraints. Designed normalized relational models for candidates and votes, ensuring secure and auditable election results.",
       "type": "Full-Stack Engineering",
-      "priority": 8
+      "priority": 9
     }
   ],
   "education": {
