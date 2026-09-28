@@ -3,7 +3,7 @@
     "name": "Ntokozo Ntombela",
     "title": "Data Engineer | ICT Graduate",
     "location": "Durban, South Africa",
-    "summary": "A dedicated ICT Graduate from DUT currently pursuing a Bachelor of ICT Honours. With a strong portfolio in data engineering, automated ETL pipelines, and cloud-native analytics, I focus on building secure, efficient systems that turn raw data into actionable insights using Python, SQL, Azure, and Databricks."
+    "summary": "A dedicated ICT Graduate from DUT currently pursuing a Bachelor of ICT Honours. With a strong portfolio in data engineering, automated ETL pipelines, and cloud-native analytics, I focus on building scalable, efficient systems that turn raw data into actionable insights using Python, SQL, Microsoft Fabric, Databricks, and Machine Learning."
   },
   "contact": {
     "email": "ntombelan098@gmail.com",
@@ -15,13 +15,16 @@
     "core": [
       "Data Engineering Pipelines",
       "Dimensional Modeling (Star Schema)",
-      "ETL/ELT Automation",
+      "ETL/ELT Automation & Orchestration",
       "Medallion Architecture",
+      "Microsoft Fabric Ecosystem (Lakehouse, Data Warehouse)",
+      "Real-Time Analytics & Data Integration",
       "Apache Spark (PySpark)",
       "Databricks Lakehouse",
-      "Azure Data Services & Microsoft Fabric",
+      "Azure Data Services",
+      "Machine Learning (XGBoost)",
+      "dbt (Data Build Tool)",
       "Advanced SQL & PostgreSQL",
-      "DataSecOps & Cloud Security",
       "REST API Integration",
       "Flask (Backend)",
       "Containerization (Docker)"
@@ -29,6 +32,7 @@
     "programming": [
       "Python",
       "SQL",
+      "KQL",
       "C#",
       "Java",
       "HTML/CSS",
@@ -37,6 +41,7 @@
     ],
     "cloud_platforms": [
       "Azure",
+      "Microsoft Fabric",
       "Databricks",
       "Render (Cloud Hosting)",
       "Firebase",
@@ -45,6 +50,8 @@
     "tools": [
       "Git & GitHub",
       "VS Code",
+      "Azure Data Factory (Fabric)",
+      "dbt Labs",
       "Streamlit",
       "Power BI",
       "Jupyter Notebooks",
@@ -55,6 +62,38 @@
   },
   "certifications": {
     "completed": [
+      {
+        "name": "Microsoft Certified: Fabric Data Engineer Associate (DP-700)",
+        "issuer": "Microsoft",
+        "date": "Sep 2026",
+        "status": "completed",
+        "icon": "✅",
+        "focus": "Data Engineering"
+      },
+      {
+        "name": "dbt Fundamentals",
+        "issuer": "dbt Labs",
+        "date": "Jul 2026",
+        "status": "completed",
+        "icon": "✔",
+        "focus": "Data Engineering"
+      },
+      {
+        "name": "Quantium - Data Analytics Job Simulation",
+        "issuer": "Forage",
+        "date": "Jun 2026",
+        "status": "completed",
+        "icon": "✔",
+        "focus": "Data Analytics"
+      },
+      {
+        "name": "SQL intermediate",
+        "issuer": "Sololearn",
+        "date": "2026",
+        "status": "completed",
+        "icon": "✔",
+        "focus": "Databases"
+      },
       {
         "name": "Associate Data Engineer",
         "issuer": "DataCamp",
@@ -75,6 +114,8 @@
         "name": "Academy Accreditation - Databricks Fundamentals", 
         "issuer": "Databricks", 
         "date": "Nov 2025", 
+        "status": "completed",
+        "icon": "✔",
         "focus": "Data Intelligence Platform" 
       },
       {
@@ -118,13 +159,6 @@
         "focus": "Infrastructure"
       }
     ],
-    "in_progress": [
-      {
-        "name": "Implementing Data Engineering Solutions Using Microsoft Fabric (DP-700)",
-        "status": "in_progress",
-        "icon": "⚠"
-      }
-    ],
     "planned": [
       {
         "name": "Databricks Data Engineer Associate",
@@ -135,22 +169,70 @@
   },
   "projects": [
     {
+      "name": "SA Financial Crime & Fraud Intelligence Platform",
+      "subtitle": "Enterprise Cloud Architecture",
+      "tech_stack": [
+        "Microsoft Fabric",
+        "PySpark",
+        "KQL",
+        "Eventstream",
+        "Power BI"
+      ],
+      "summary": "An enterprise-grade, end-to-end real-time financial crime detection platform built on Microsoft Fabric. Ingests company registrations and sanctions lists through a Medallion architecture, featuring PySpark fuzzy matching and real-time transaction streaming via Eventstream.",
+      "github_url": "https://github.com/ntokozo078/sa-fincrime-fabric-platform",
+      "outcome": "Automated the entire FICA and AML compliance pipeline from raw data ingestion to a real-time fraud alert dashboard.",
+      "type": "Cloud Engineering",
+      "priority": 1
+    },
+    {
+      "name": "SA Bank DQ & POPIA Pipeline",
+      "subtitle": "Data Governance & Engineering",
+      "tech_stack": [
+        "Python",
+        "Delta Lake",
+        "Scikit-Learn",
+        "Streamlit",
+        "APScheduler"
+      ],
+      "summary": "Production-grade banking data quality pipeline featuring POPIA-compliant PII masking (SHA-256/UUID), IsolationForest anomaly detection, 8-rule fraud scoring, and Delta Lake Silver storage with a Streamlit dashboard.",
+      "live_url": "https://sa-bank-data-quality-pipeline-1.onrender.com/",
+      "github_url": "https://github.com/ntokozo078/SA-bank-data-quality-pipeline",
+      "outcome": "Demonstrated strict data security principles and production-level fault tolerance using a 3-state circuit breaker.",
+      "type": "Data Engineering",
+      "priority": 2
+    },
+    {
       "name": "InsightOps – E-commerce BI System",
       "subtitle": "Data Warehousing & BI",
       "tech_stack": [
         "Python",
-        "SQLite",
+        "PostgreSQL",
         "Star Schema",
         "Streamlit",
         "Pandas",
         "Plotly"
       ],
-      "summary": "A production-grade Business Intelligence system implementing a Star Schema data warehouse with surrogate keys. It features a full ETL pipeline that transforms raw e-commerce data into actionable KPIs (Revenue, Churn, Profit) and visualizes them on an interactive dashboard with automated alerts.",
-      "live_url": "https://ntokozo078--insightops-e-commerce-pipelines-dashboardapp-vbz2ih.streamlit.app/",
+      "summary": "A production-grade Business Intelligence system implementing a Star Schema data warehouse with surrogate keys. It features a full ETL pipeline that transforms raw e-commerce data into actionable KPIs (Revenue, Churn, Profit) and visualizes them on an interactive dashboard.",
+      "live_url": "https://insightops-e-commerce-pipelines.onrender.com/",
       "github_url": "https://github.com/ntokozo078/InsightOps_E-commerce-pipelines",
       "outcome": "Built a scalable dimensional model and automated reporting system, solving real business problems like churn analysis and profit tracking.",
       "type": "Data Warehousing",
-      "priority": 1
+      "priority": 3
+    },
+    {
+      "name": "Vehicle Insurance Fraud Detection",
+      "subtitle": "Honours Machine Learning Research",
+      "tech_stack": [
+        "Python",
+        "XGBoost",
+        "Scikit-Learn",
+        "Pandas",
+        "Data Balancing (SMOTE)"
+      ],
+      "summary": "Developing an XGBoost machine learning model to classify fraudulent versus legitimate vehicle insurance claims. Focuses on addressing heavy data imbalance and identifying highly correlative claim attributes to optimize predictive metrics like F1-Score and Precision.",
+      "outcome": "Academic research project addressing the gap in non-linear, tabular feature analysis for insurance fraud.",
+      "type": "Machine Learning",
+      "priority": 4
     },
     {
       "name": "Databricks Medallion Sales Pipeline",
@@ -165,7 +247,7 @@
       "github_url": "https://github.com/ntokozo078/databricks-medallion-sales-pipeline",
       "outcome": "Demonstrated mastery of modern Lakehouse architecture principles and disaster recovery using Delta Time Travel.",
       "type": "Cloud Engineering",
-      "priority": 2
+      "priority": 5
     },
     {
       "name": "SA Job Market Pipeline & Tracker",
@@ -182,52 +264,6 @@
       "github_url": "https://github.com/ntokozo078/devpulse-job-tracker",
       "outcome": "Automated the entire data lifecycle from ingestion to visualization, creating a clean historical dataset of the SA tech market tracking 967+ active jobs.",
       "type": "Data Engineering",
-      "priority": 3
-    },
-    {
-      "name": "AI Lyric Video Generator",
-      "subtitle": "AI Pipeline & Containerization",
-      "tech_stack": [
-        "Flask",
-        "Faster-Whisper",
-        "MoviePy",
-        "Docker",
-        "FFmpeg"
-      ],
-      "summary": "A cloud-native media processing app. Integrates the Faster-Whisper AI model for precise audio transcription and MoviePy for dynamic text overlays. Containerized with Docker to run efficiently on low-memory cloud tiers.",
-      "live_url": "https://lyric-video-gen.onrender.com",
-      "github_url": "https://github.com/ntokozo078/lyric-video-gen",
-      "outcome": "Successfully deployed a resource-heavy AI/Video pipeline on free-tier infrastructure using advanced optimization and Docker.",
-      "type": "AI Engineering",
-      "priority": 4
-    },
-    {
-      "name": "Automated Data Extraction Engine",
-      "subtitle": "Python ETL Scripting",
-      "tech_stack": [
-        "Python",
-        "Requests",
-        "BeautifulSoup",
-        "JSON",
-        "Pandas"
-      ],
-      "summary": "A robust scraping engine designed to ingest raw market data from the Adzuna API. It handles pagination, cleans messy HTML content, normalizes currency formats, and structures data for downstream database loading.",
-      "github_url": "https://github.com/ntokozo078/devpulse-job-tracker/tree/main/etl",
-      "outcome": "Automated the data collection process, reducing manual research time to zero.",
-      "type": "Data Engineering",
-      "priority": 5
-    },
-    {
-      "name": "Digital Voting System",
-      "subtitle": "Secure Backend",
-      "tech_stack": [
-        "Flask",
-        "PostgreSQL",
-        "BCrypt",
-        "SQLAlchemy"
-      ],
-      "summary": "Backend voting system with strict integrity constraints. Designed normalized relational models for candidates and votes, ensuring secure and auditable election results.",
-      "type": "Full-Stack Engineering",
       "priority": 6
     }
   ],
@@ -265,31 +301,31 @@
   ],
   "goals": {
     "career_targets": [
-      "Graduate Data Engineer",
+      "Graduate Data Engineer (2027 Intake)",
       "Junior Data Engineer",
-      "DataSecOps Engineer"
+      "Analytics Engineer"
     ],
     "short_term": [
-      "Secure a graduate/internship role in 2026",
-      "Pass Implementing Data Engineering Solutions Using Microsoft Fabric (DP-700)",
-      "Containerize existing pipeline projects with Docker"
+      "Secure a 2027 graduate/internship role (e.g., Capitec, Synthesis, BBD)",
+      "Complete Honours ML research on vehicle insurance fraud detection",
+      "Integrate dbt into existing pipeline projects"
     ],
     "long_term": [
       "Become a Senior Cloud Data Architect",
-      "Specialize in Secure Data Infrastructure (DataSecOps)",
+      "Architect scalable Lakehouse solutions and enterprise data platforms",
       "Lead data engineering initiatives for enterprise tech or financial firms"
     ]
   },
   "strengths": [
     "Bridging Software Engineering & Data Engineering",
     "Building real, deployed applications",
-    "Strong Cybersecurity & Network fundamentals",
-    "Comfortable with Cloud Workflows (Azure/Render)",
+    "Designing highly scalable Cloud Data Workflows (Fabric/Databricks/Azure)",
+    "Comfortable with end-to-end data lifecycle management",
     "Fast learner with a research-driven mindset",
     "Independent problem solver"
   ],
   "areas_for_growth": [
-    "Deepen Microsoft Fabric practical experience",
+    "Deploying Machine Learning models to production (MLOps)",
     "Implement a real-time streaming project (Kafka)",
     "Advanced SQL performance tuning"
   ]

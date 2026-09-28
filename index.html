@@ -611,6 +611,33 @@
             left: -10px;
         }
 
+        /* Document Linking Button Style */
+        .doc-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            margin-top: 15px;
+            background-color: transparent;
+            border: 1px solid var(--accent);
+            color: var(--primary);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        .doc-link:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        .dark-mode .doc-link {
+            color: var(--text);
+        }
+        .dark-mode .doc-link:hover {
+            color: white;
+        }
+
         /* Projects Section */
         .projects-container {
             display: grid;
@@ -646,8 +673,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text);
-            font-size: 3rem;
+            color: white; /* Make icons stand out on gradients */
+            font-size: 4rem; /* Make icons larger */
             position: relative;
             overflow: hidden;
             background-size: cover;
@@ -980,85 +1007,90 @@
                 <p>Data Engineer| Software Engineer | ICT Graduate</p>
                 <p>Building robust data pipelines to transform raw data into actionable insights</p>
                 <div class="btn-group">
-                    <a href="#projects" class="btn">View My Projects</a>
-                     <a href="Ntokozo Ntombela.pdf" class="btn btn-outline" id="downloadCV" download>
-                      <i class="fas fa-download"></i> Download CV
-                     </a>
-                    </a>
-                </div>
+    <a href="#projects" class="btn">View My Projects</a>
+    <a href="Ntokozo_Ntombela_Resume.pdf" class="btn btn-outline" target="_blank">
+        <i class="fas fa-eye"></i> View CV
+    </a>
+    <a href="Ntokozo_Ntombela_Resume.pdf" class="btn btn-outline" download title="Download CV">
+        <i class="fas fa-download"></i> Download
+    </a>
+</div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-            </div>
-           <div class="about-content">
-    <div class="about-text">
-        <p>
-            I am an ICT Graduate (Class of 2025) and incoming Bachelor of ICT Honours student at the Durban University of Technology. My focus is on the intersection of Software Engineering and Data Engineering, with a strong interest in the full data lifecycle from ingestion and transformation to analytics ready delivery.
-        </p>
-        <p>
-            I work with Python, SQL, Azure, and Databricks to build automated data pipelines that are reliable, maintainable, and aligned with real-world business needs. My academic foundation, combined with industry certifications such as DataCamp Associate Data Engineer , Azure Data Fundamentals and Databricks Fundamentals, supports my ability to design scalable data workflows and apply sound data practices.
-        </p>
-        <p>
-            Through projects like InsightOps and an automated Job Market Pipeline, I have built end-to-end solutions involving data ingestion, cleaning, transformation, and delivery for analysis. I am currently seeking Graduate Data Engineer or Data Engineering Internship role where I can contribute to building robust data platforms while continuing to grow in cloud and data engineering.
-        </p>
-    </div>
-</div>
+    <div class="container">
+        <div class="section-title">
+            <h2>About Me</h2>
         </div>
-    </section>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    I am an ICT Graduate (Class of 2025) currently pursuing my Bachelor of ICT Honours at the Durban University of Technology. My focus sits at the intersection of Software Engineering and Data Engineering, with a strong interest in the full data lifecycle from automated ingestion and transformation to machine learning and analytics ready delivery.
+                </p>
+                <p>
+                    I work with Python, SQL, Microsoft Fabric, Azure, and Databricks to build scalable cloud pipelines that are reliable, maintainable, and aligned with enterprise business needs. My academic foundation is backed by rigorous industry credentials, most notably the <strong>Microsoft Certified: Fabric Data Engineer Associate (DP-700)</strong>, alongside certifications from DataCamp, dbt Labs, and Databricks. These validate my ability to architect robust Medallion workflows and apply sound data governance.
+                </p>
+                <p>
+                    Through live, production grade projects like the InsightOps BI System, my Databricks Medallion Sales Pipeline, and my ongoing Honours research in XGBoost fraud detection, I have built end-to-end solutions involving data extraction, dimensional modeling, and cloud orchestration. I am currently actively seeking a 2027 Graduate Data Engineer or Internship role where I can contribute to high-performing teams while continuing to scale my cloud architecture skills.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Skills Section -->
     <section id="skills" style="background-color: var(--bg);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Technical Skills</h2>
-            </div>
-            <div class="skills-container">
-                
-                <!-- Category 1: Data Engineering (Priority) -->
-                <div class="skill-category">
-                    <h3>Data Engineering & Big Data</h3>
-                    <ul class="skills-list">
-                        <li><i class="fas fa-bolt"></i> Apache Spark (PySpark)</li>
-                        <li><i class="fas fa-layer-group"></i> Databricks  & Delta Lake</li>
-                        <li><i class="fas fa-cogs"></i> ETL/ELT Pipeline Design</li>
-                        <li><i class="fas fa-database"></i> SQL</li>
-                        <li><i class="fas fa-table"></i> Pandas & NumPy</li>
-                    </ul>
-                </div>
-
-                <!-- Category 2: Software Development -->
-                <div class="skill-category">
-                    <h3>Software & Backend</h3>
-                    <ul class="skills-list">
-                        <li><i class="fab fa-python"></i> Python (Scripting & OOP)</li>
-                        <li><i class="fas fa-server"></i> Flask Web Framework</li>
-                        <li><i class="fas fa-code"></i> REST API Development</li>
-                        <li><i class="fas fa-code-branch"></i> Git & GitHub Version Control</li>
-                        <li><i class="fab fa-microsoft"></i> C# / ASP.NET </li>
-                    </ul>
-                </div>
-
-                <!-- Category 3: Cloud & Infrastructure -->
-                <div class="skill-category">
-                    <h3>Cloud & Security</h3>
-                    <ul class="skills-list">
-                        <li><i class="fab fa-microsoft"></i> Azure Data Services</li>
-                        <li><i class="fas fa-cloud"></i> Render Cloud Deployment</li>
-                        <li><i class="fab fa-linux"></i> Linux Administration (CLI)</li>
-                        <li><i class="fas fa-shield-alt"></i> Cybersecurity Fundamentals</li>
-                        <li><i class="fab fa-docker"></i> Docker & Containerization</li>
-                    </ul>
-                </div>
-
-            </div>
+    <div class="container">
+        <div class="section-title">
+            <h2>Technical Skills</h2>
         </div>
-    </section>
+        <div class="skills-container">
+            
+            <!-- Category 1: Data Engineering & Big Data -->
+            <div class="skill-category">
+                <h3>Data Engineering & Big Data</h3>
+                <ul class="skills-list">
+                    <li><i class="fas fa-bolt"></i> Apache Spark (PySpark)</li>
+                    <li><i class="fas fa-layer-group"></i> Databricks & Delta Lake</li>
+                    <li><i class="fab fa-microsoft"></i> Microsoft Fabric (Lakehouse & DW)</li>
+                    <li><i class="fas fa-cogs"></i> ETL/ELT Automation & Orchestration</li>
+                    <li><i class="fas fa-database"></i> SQL & KQL (Kusto Query Language)</li>
+                    <li><i class="fas fa-tools"></i> dbt (Data Build Tool)</li>
+                </ul>
+            </div>
+
+            <!-- Category 2: Software Development & Machine Learning -->
+            <div class="skill-category">
+                <h3>Software & Backend</h3>
+                <ul class="skills-list">
+                    <li><i class="fab fa-python"></i> Python (Scripting & OOP)</li>
+                    <li><i class="fas fa-brain"></i> Machine Learning (XGBoost)</li>
+                    <li><i class="fas fa-server"></i> Flask Web Framework</li>
+                    <li><i class="fas fa-code"></i> REST API Development</li>
+                    <li><i class="fas fa-code-branch"></i> Git & GitHub Version Control</li>
+                    <li><i class="fab fa-microsoft"></i> C# / ASP.NET </li>
+                </ul>
+            </div>
+
+            <!-- Category 3: Cloud Data Infrastructure -->
+            <div class="skill-category">
+                <h3>Cloud Data Infrastructure</h3>
+                <ul class="skills-list">
+                    <li><i class="fas fa-cloud"></i> Azure Data Services</li>
+                    <li><i class="fas fa-network-wired"></i> Azure Data Factory (Fabric)</li>
+                    <li><i class="fab fa-docker"></i> Docker & Containerization</li>
+                    <li><i class="fas fa-database"></i> PostgreSQL & Relational DBs</li>
+                    <li><i class="fab fa-linux"></i> Linux Administration (CLI)</li>
+                    <li><i class="fas fa-server"></i> Render Cloud Deployment</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 <section id="certificates">
     <div class="container">
@@ -1069,13 +1101,13 @@
         <div class="cert-grid">
             
             <div class="certificate-card">
-                <div class="certificate-img" style="background-image: url('images/databricks.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <div class="certificate-img" style="background-image: url('images/dp700.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
                 <div class="certificate-content">
-                    <h3>Academy Accreditation - Databricks Fundamentals</h3>
-                    <p>Earners of this accreditation have demonstrated the understanding of fundamental concepts related to Databricks Data Intelligence Platform.</p>
+                    <h3>Microsoft Certified: Fabric Data Engineer Associate (DP-700)</h3>
+                    <p>Validates expertise in designing, implementing, and optimizing enterprise-scale data engineering solutions and automated pipelines using Microsoft Fabric.</p>
                     <div class="project-links">
-                        <div class="certificate-date">Issued: Dec 7, 2025</div>
-                        <a href="https://credentials.databricks.com/3994715a-026f-4d84-8b6d-a9f81a539680#acc.UO4W1qNe" target="_blank" class="credential-btn"><i class="fas fa-external-link-alt"></i> View Credential</a>
+                        <div class="certificate-date">Issued: Sep 18, 2026</div>
+                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/NtokozoNtombela-8859/A7FCE4B07394D5FD?sharingId=F16731CC7905823C" target="_blank" class="credential-btn"><i class="fas fa-external-link-alt"></i> View Credential</a>
                     </div>
                 </div>
             </div>
@@ -1108,6 +1140,18 @@
         
         <div id="more-certificates" style="display: none;">
             <div class="cert-grid">
+
+                <div class="certificate-card">
+                    <div class="certificate-img" style="background-image: url('images/databricks.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                    <div class="certificate-content">
+                        <h3>Academy Accreditation - Databricks Fundamentals</h3>
+                        <p>Earners of this accreditation have demonstrated the understanding of fundamental concepts related to Databricks Data Intelligence Platform.</p>
+                        <div class="project-links">
+                            <div class="certificate-date">Issued: Dec 7, 2025</div>
+                            <a href="https://credentials.databricks.com/3994715a-026f-4d84-8b6d-a9f81a539680#acc.UO4W1qNe" target="_blank" class="credential-btn"><i class="fas fa-external-link-alt"></i> View Credential</a>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="certificate-card">
                     <div class="certificate-img" style="background-image: url('images/spark.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
@@ -1144,18 +1188,6 @@
                 </div>
 
                 <div class="certificate-card">
-                    <div class="certificate-img" style="background-image: url('images/introdution%20to%20cyber.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
-                    <div class="certificate-content">
-                        <h3>Introduction to Cybersecurity</h3>
-                        <p>Cisco Networking Academy. Gained expertise in threat protection, network defense strategies, and security-first design.</p>
-                        <div class="project-links">
-                            <div class="certificate-date">Issued: May 2025</div>
-                            <a href="https://www.credly.com/badges/5984853e-b9d5-46ad-82b6-b23f96ea8d34" target="_blank" class="credential-btn"><i class="fas fa-external-link-alt"></i> View Credential</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="certificate-card">
                     <div class="certificate-img" style="background-image: url('images/data\ analytics.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
                     <div class="certificate-content">
                         <h3>Quantium Data Analytics Job Simulation (Forage)</h3>
@@ -1187,142 +1219,167 @@
 
     </div>
 </section>
-
-   <section id="timeline" style="background-color: var(--bg);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Education & Experience</h2>
+<section id="timeline" style="background-color: var(--bg);">
+    <div class="container">
+        <div class="section-title">
+            <h2>Education & Experience</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-progress" id="timelineProgress"></div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2022 (Completed)</div>
+                    <h3>National Senior Certificate (Matric)</h3>
+                    <p>High School / Secondary Education</p>
+                    <p>Achieved a strong academic foundation, securing entrance requirements for the Bachelor of Information and Communications Technology degree.</p>
+                </div>
             </div>
-            <div class="timeline">
-                <div class="timeline-progress" id="timelineProgress"></div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2023 - 2025</div>
-                        <h3>Bachelor of ICT</h3>
-                        <p>Durban University of Technology</p>
-                        <p>Graduated. Specialized in Application Development. Achieved distinctions in Business Intelligence and Machine Intelligence modules.</p>
-                    </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2024 - May 2025</div>
-                        <h3>Infrastructure & Security</h3>
-                        <p>Cisco Networking Academy</p>
-                        <p>Completed Cybersecurity and Linux Unhatched certifications. Built a strong foundation in server administration and network defense.</p>
-                    </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2023 - 2025</div>
+                    <h3>Bachelor of ICT</h3>
+                    <p>Durban University of Technology</p>
+                    <p>Graduated. Specialized in Application Development. Achieved distinctions in Business Intelligence and Machine Intelligence modules.</p>
                 </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Mid 2025</div>
-                        <h3>Full Stack Engineering</h3>
-                        <p>FNB App Academy & DUT</p>
-                        <p>Intensive training in modern software architecture, API development, and enterprise banking systems.</p>
-                    </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2024 - May 2025</div>
+                    <h3>Infrastructure & Security</h3>
+                    <p>Cisco Networking Academy</p>
+                    <p>Completed Cybersecurity and Linux Unhatched certifications. Built a strong foundation in server administration and network defense.</p>
                 </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Late 2025</div>
-                        <h3>Cloud Data Engineering</h3>
-                        <p>IBM & Microsoft</p>
-                        <p>Earned certifications in Azure Data Fundamentals, Databricks, and Apache Spark. Transitioned from software dev to building scalable data pipelines.</p>
-                    </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Mid 2025</div>
+                    <h3>Full Stack Engineering</h3>
+                    <p>FNB App Academy & DUT</p>
+                    <p>Intensive training in modern software architecture, API development, and enterprise banking systems.</p>
                 </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2026 - Present</div>
-                        <h3>Bachelor of ICT Honours</h3>
-                        <p>Durban University of Technology</p>
-                        <p>Currently Enrolled. Specializing in  Advanced Software Engineering and Management, Machine Learning, Cloud Computing, and Advanced Cybersecurity. Recently earned the DataCamp Associate Data Engineer certification.</p>
-                    </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Late 2025</div>
+                    <h3>Cloud Data Engineering</h3>
+                    <p>IBM & Databricks</p>
+                    <p>Earned certifications in Azure Data Fundamentals, Databricks, and Apache Spark. Transitioned from software dev to building scalable data pipelines.</p>
                 </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Present</div>
-                        <h3>Graduate Data Engineer or Software Engineer</h3>
-                        <p>Open to Work</p>
-                        <p>Successfully deployed end-to-end cloud-native ETL pipelines. Ready to join a team as a Data Engineer or Software Engineer.</p>
-                    </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2026 - Present</div>
+                    <h3>Bachelor of ICT Honours</h3>
+                    <p>Durban University of Technology</p>
+                    <p>Currently Enrolled. Specializing in Machine Learning, Cloud Computing, and Advanced Software Engineering. Conducting core academic research on developing XGBoost ML models for vehicle insurance fraud detection.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">September 2026</div>
+                    <h3>Enterprise Cloud Architecture</h3>
+                    <p>Microsoft & dbt Labs</p>
+                    <p>Officially earned the Microsoft Certified: Fabric Data Engineer Associate (DP-700) and dbt Fundamentals certifications. Validated enterprise-grade skills in orchestrating automated ETL workflows and Medallion architectures.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Targeting 2027</div>
+                    <h3>2027 Graduate Data Engineer Candidate</h3>
+                    <p>Actively Interviewing</p>
+                    <p>Successfully deployed live, end-to-end cloud-native ETL pipelines. Actively seeking 2027 graduate or internship or junior placements to build scalable enterprise data platforms.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-  <section id="projects">
+    </div>
+</section>
+ <!-- UPDATED PROJECTS SECTION -->
+<section id="projects">
     <div class="container">
         <div class="section-title">
             <h2>Featured Projects</h2>
-            <p>My portfolio focuses on the three pillars of modern Data Engineering: Cloud Architecture, Data Modeling, and Process Automation.</p>
+            <p>My portfolio focuses on the three pillars of modern Data Engineering: Enterprise Cloud Architecture, Data Governance, and Relational Modeling.</p>
         </div>
 
         <div class="projects-grid">
 
+            <!-- Project 1: Fabric Financial Crime Platform -->
             <div class="project-card">
-                <div class="project-img" style="background: linear-gradient(45deg, #FF3621, #00C7B7);">
-                    <i class="fas fa-cloud"></i>
+                <div class="project-img" style="background: linear-gradient(45deg, #0078D4, #00BCF2);">
+                    <i class="fas fa-shield-alt"></i>
                 </div>
                 <div class="project-content">
-                    <h3>Databricks Medallion Pipeline</h3>
-                    <p>Cloud Big Data. An end-to-end ELT pipeline using PySpark and Delta Lake. I implemented a Medallion Architecture (Bronze → Silver → Gold) with Schema Enforcement and Time Travel for enterprise-grade data quality.</p>
+                    <h3>SA Financial Crime & Fraud Intelligence Platform</h3>
+                    <p>Enterprise-grade real-time detection platform built on Microsoft Fabric. Ingests CIPC registrations and sanctions lists through Medallion architecture, featuring PySpark fuzzy matching, real-time transaction streaming via Eventstream, and KQL automated alerts.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">Databricks</span>
+                        <span class="tech-tag">Microsoft Fabric</span>
                         <span class="tech-tag">PySpark</span>
-                        <span class="tech-tag">Delta Lake</span>
-                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">KQL</span>
+                        <span class="tech-tag">Eventstream</span>
+                        <span class="tech-tag">Power BI</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/ntokozo078/databricks-medallion-sales-pipeline" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/ntokozo078/sa-fincrime-fabric-platform" target="_blank"><i class="fab fa-github"></i> Code</a>
                     </div>
                 </div>
             </div>
 
+            <!-- Project 2: Bank Data Quality & POPIA -->
             <div class="project-card">
                 <div class="project-img" style="background: linear-gradient(45deg, #4b6cb7, #182848);">
-                    <i class="fas fa-cubes"></i>
+                    <i class="fas fa-university"></i>
                 </div>
                 <div class="project-content">
-                    <h3>InsightOps BI System</h3>
-                    <p>Data Warehousing. A production-grade BI system built on a Star Schema with surrogate keys. It transforms raw e-commerce data into actionable KPIs (Churn, Profit Margin) and generates automated business alerts.</p>
+                    <h3>SA Bank DQ & POPIA Pipeline</h3>
+                    <p>Production-grade banking data quality pipeline featuring POPIA-compliant PII masking (SHA-256/UUID), IsolationForest anomaly detection, 8-rule fraud scoring, 3-state circuit breaker fault tolerance, and Delta Lake Silver storage with a Streamlit dashboard.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">Python ETL</span>
-                        <span class="tech-tag">Star Schema</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Delta Lake</span>
+                        <span class="tech-tag">Scikit-Learn</span>
                         <span class="tech-tag">Streamlit</span>
-                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">APScheduler</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/ntokozo078/-InsightOps_E-commerce-pipelines" target="_blank"><i class="fab fa-github"></i> Code</a>
-                        <a href="https://ntokozo078--insightops-e-commerce-pipelines-dashboardapp-vbz2ih.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Dashboard</a>
+                        <a href="https://github.com/ntokozo078/SA-bank-data-quality-pipeline" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://sa-bank-data-quality-pipeline-1.onrender.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live App</a>
                     </div>
                 </div>
             </div>
 
+            <!-- Project 3: InsightOps E-Commerce BI -->
             <div class="project-card">
                 <div class="project-img" style="background: linear-gradient(45deg, #11998e, #38ef7d);">
-                    <i class="fas fa-robot"></i>
+                    <i class="fas fa-database"></i>
                 </div>
                 <div class="project-content">
-                    <h3>SA Job Market Pipeline</h3>
-                    <p>Advanced Automation. A daily self-healing pipeline that scrapes job data. Features include a "Zombie Filter" for expired jobs, hybrid API/Web Scraping ingestion, and Cron Jobs scheduling on Render.</p>
+                    <h3>InsightOps – E-Commerce BI System</h3>
+                    <p>Production-grade Business Intelligence system and dimensional data warehouse using a Star Schema with surrogate keys. Implements a full automated ETL pipeline transforming raw e-commerce records into reporting KPIs, visualized through a custom interactive web dashboard hosted on Render.</p>
                     <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Star Schema</span>
                         <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">Cron Jobs</span>
-                        <span class="tech-tag">BeautifulSoup</span>
-                        <span class="tech-tag">SCD Type 1</span>
+                        <span class="tech-tag">JavaScript/HTML</span>
+                        <span class="tech-tag">Render</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/ntokozo078/entry-job-market-pipeline" target="_blank"><i class="fab fa-github"></i> Code</a>
-                        <a href="https://entry-job-market-pipeline.onrender.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live App</a>
+                        <a href="https://github.com/ntokozo078/InsightOps_E-commerce-pipelines" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://insightops-e-commerce-pipelines.onrender.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live App</a>
                     </div>
                 </div>
             </div>
