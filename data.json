@@ -202,24 +202,6 @@
       "priority": 2
     },
     {
-      "name": "InsightOps – E-commerce BI System",
-      "subtitle": "Data Warehousing & BI",
-      "tech_stack": [
-        "Python",
-        "PostgreSQL",
-        "Star Schema",
-        "Streamlit",
-        "Pandas",
-        "Plotly"
-      ],
-      "summary": "A production-grade Business Intelligence system implementing a Star Schema data warehouse with surrogate keys. It features a full ETL pipeline that transforms raw e-commerce data into actionable KPIs (Revenue, Churn, Profit) and visualizes them on an interactive dashboard.",
-      "live_url": "https://insightops-e-commerce-pipelines.onrender.com/",
-      "github_url": "https://github.com/ntokozo078/InsightOps_E-commerce-pipelines",
-      "outcome": "Built a scalable dimensional model and automated reporting system, solving real business problems like churn analysis and profit tracking.",
-      "type": "Data Warehousing",
-      "priority": 3
-    },
-    {
       "name": "Vehicle Insurance Fraud Detection",
       "subtitle": "Honours Machine Learning Research",
       "tech_stack": [
