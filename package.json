@@ -1,15 +1,13 @@
 {
-  "name": "data_engineer",
+  "name": "data-engineering-portfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "chat.js",
+  "description": "Personal portfolio site",
+  "main": "api/chat.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
-    "dotenv": "^17.2.3",
-    "node-fetch": "^3.3.2"
+    "@google/generative-ai": "^0.24.1"
   },
   "keywords": [],
   "author": "",

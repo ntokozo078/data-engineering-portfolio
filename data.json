@@ -1,33 +1,31 @@
 {
   "personal": {
     "name": "Ntokozo Ntombela",
-    "title": "Data Engineer | ICT Graduate",
+    "title": "Graduate Data Engineer | ICT Honours",
     "location": "Durban, South Africa",
-    "summary": "A dedicated ICT Graduate from DUT currently pursuing a Bachelor of ICT Honours. With a strong portfolio in data engineering, automated ETL pipelines, and cloud-native analytics, I focus on building scalable, efficient systems that turn raw data into actionable insights using Python, SQL, Microsoft Fabric, Databricks, and Machine Learning."
+    "summary": "ICT graduate from the Durban University of Technology, currently doing a Bachelor of ICT Honours. Builds and documents data pipelines using Python, SQL, Microsoft Fabric and Databricks. Open to 2027 graduate and junior data engineering roles."
   },
   "contact": {
     "email": "ntombelan098@gmail.com",
     "github": "https://github.com/ntokozo078",
     "linkedin": "https://www.linkedin.com/in/ntokozo-ntombela-ba662235a/",
-    "portfolio": "https://ntokozo078.github.io"
+    "portfolio": "https://data-engineering-portfolio-xi.vercel.app/"
   },
   "specialities": {
     "core": [
       "Data Engineering Pipelines",
       "Dimensional Modeling (Star Schema)",
-      "ETL/ELT Automation & Orchestration",
+      "ETL/ELT",
       "Medallion Architecture",
-      "Microsoft Fabric Ecosystem (Lakehouse, Data Warehouse)",
-      "Real-Time Analytics & Data Integration",
+      "Microsoft Fabric (Lakehouse, Notebooks, Pipelines)",
+      "Streaming with Fabric Eventstream (simulated data)",
       "Apache Spark (PySpark)",
-      "Databricks Lakehouse",
-      "Azure Data Services",
-      "Machine Learning (XGBoost)",
-      "dbt (Data Build Tool)",
-      "Advanced SQL & PostgreSQL",
-      "REST API Integration",
-      "Flask (Backend)",
-      "Containerization (Docker)"
+      "Databricks and Delta Lake",
+      "Machine Learning (scikit-learn)",
+      "SQL and PostgreSQL",
+      "REST APIs",
+      "Flask",
+      "Data quality checks"
     ],
     "programming": [
       "Python",
@@ -36,28 +34,24 @@
       "C#",
       "Java",
       "HTML/CSS",
-      "JavaScript",
-      "Bash/Shell"
+      "JavaScript"
     ],
     "cloud_platforms": [
-      "Azure",
       "Microsoft Fabric",
+      "Azure",
       "Databricks",
-      "Render (Cloud Hosting)",
-      "Firebase",
-      "AWS (Foundational)"
+      "Render"
     ],
     "tools": [
-      "Git & GitHub",
+      "Git and GitHub",
+      "GitHub Actions",
       "VS Code",
-      "Azure Data Factory (Fabric)",
-      "dbt Labs",
       "Streamlit",
       "Power BI",
       "Jupyter Notebooks",
-      "Docker",
+      "Docker (basics, used in the lyric-video-gen project)",
       "PostgreSQL",
-      "Cron Jobs"
+      "dbt (Fundamentals certification, not yet used in a project)"
     ]
   },
   "certifications": {
@@ -65,112 +59,86 @@
       {
         "name": "Microsoft Certified: Fabric Data Engineer Associate (DP-700)",
         "issuer": "Microsoft",
-        "date": "Sep 2026",
-        "status": "completed",
-        "icon": "✅",
+        "date": "18 Sep 2026",
         "focus": "Data Engineering"
       },
       {
         "name": "dbt Fundamentals",
         "issuer": "dbt Labs",
         "date": "Jul 2026",
-        "status": "completed",
-        "icon": "✔",
         "focus": "Data Engineering"
       },
       {
-        "name": "Quantium - Data Analytics Job Simulation",
+        "name": "Quantium Data Analytics Job Simulation",
         "issuer": "Forage",
-        "date": "Jun 2026",
-        "status": "completed",
-        "icon": "✔",
+        "date": "17 Jun 2026",
         "focus": "Data Analytics"
       },
       {
-        "name": "SQL intermediate",
+        "name": "SQL Intermediate",
         "issuer": "Sololearn",
-        "date": "2026",
-        "status": "completed",
-        "icon": "✔",
+        "date": "15 May 2026",
         "focus": "Databases"
       },
       {
         "name": "Associate Data Engineer",
         "issuer": "DataCamp",
-        "date": "Feb 2026",
-        "status": "completed",
-        "icon": "✔",
-        "focus": "Data Engineering Pipelines & SQL"
+        "date": "20 Feb 2026",
+        "focus": "Data Engineering Pipelines and SQL"
+      },
+      {
+        "name": "Microsoft Certified: Azure Data Fundamentals (DP-900)",
+        "issuer": "Microsoft",
+        "date": "12 Dec 2025",
+        "focus": "Cloud Data"
+      },
+      {
+        "name": "Academy Accreditation - Databricks Fundamentals",
+        "issuer": "Databricks",
+        "date": "7 Dec 2025",
+        "focus": "Data Intelligence Platform"
       },
       {
         "name": "IBM Spark Fundamentals I",
         "issuer": "IBM SkillsBuild",
         "date": "Nov 2025",
-        "status": "completed",
-        "icon": "✔",
         "focus": "Big Data"
-      },
-      { 
-        "name": "Academy Accreditation - Databricks Fundamentals", 
-        "issuer": "Databricks", 
-        "date": "Nov 2025", 
-        "status": "completed",
-        "icon": "✔",
-        "focus": "Data Intelligence Platform" 
-      },
-      {
-        "name": "Microsoft Azure Data Fundamentals (DP-900)",
-        "issuer": "Microsoft",
-        "date": "2025",
-        "status": "completed",
-        "icon": "✔",
-        "focus": "Cloud Data"
       },
       {
         "name": "Databricks for Data Engineering",
         "issuer": "Databricks",
         "date": "Nov 2025",
-        "status": "completed",
-        "icon": "✔",
         "focus": "Lakehouse Architecture"
       },
       {
         "name": "FNB App Academy 2025",
         "issuer": "FNB",
-        "date": "2025",
-        "status": "completed",
-        "icon": "✔",
-        "focus": "Full Stack Engineering"
+        "date": "Jul 2025",
+        "focus": "App and Backend Development"
       },
       {
         "name": "Introduction to Cybersecurity",
         "issuer": "Cisco Networking Academy",
         "date": "May 2025",
-        "status": "completed",
-        "icon": "✔",
         "focus": "Security"
       },
       {
         "name": "Linux Unhatched",
         "issuer": "Cisco Networking Academy",
         "date": "Oct 2024",
-        "status": "completed",
-        "icon": "✔",
         "focus": "Infrastructure"
       }
     ],
     "planned": [
       {
-        "name": "Databricks Data Engineer Associate",
-        "status": "planned",
-        "icon": "⭐"
+        "name": "Databricks Data Engineer Associate"
       }
     ]
   },
   "projects": [
     {
       "name": "SA Financial Crime & Fraud Intelligence Platform",
-      "subtitle": "Enterprise Cloud Architecture",
+      "subtitle": "Microsoft Fabric lakehouse",
       "tech_stack": [
         "Microsoft Fabric",
         "PySpark",
@@ -178,15 +146,15 @@
         "Eventstream",
         "Power BI"
       ],
-      "summary": "An enterprise-grade, end-to-end real-time financial crime detection platform built on Microsoft Fabric. Ingests company registrations and sanctions lists through a Medallion architecture, featuring PySpark fuzzy matching and real-time transaction streaming via Eventstream.",
+      "summary": "Microsoft Fabric Medallion lakehouse on synthetic SA data: PySpark sanctions screening with fuzzy matching, rule-based risk scoring, and a simulated transaction stream monitored with KQL queries.",
       "github_url": "https://github.com/ntokozo078/sa-fincrime-fabric-platform",
-      "outcome": "Automated the entire FICA and AML compliance pipeline from raw data ingestion to a real-time fraud alert dashboard.",
-      "type": "Cloud Engineering",
+      "outcome": "A portfolio project on synthetic and simulated data. It isn't a live compliance system.",
+      "type": "Data Engineering",
       "priority": 1
     },
     {
-      "name": "SA Bank DQ & POPIA Pipeline",
-      "subtitle": "Data Governance & Engineering",
+      "name": "SA Bank Data Quality Pipeline",
+      "subtitle": "Data quality and privacy",
       "tech_stack": [
         "Python",
         "Delta Lake",
@@ -194,59 +162,56 @@
         "Streamlit",
         "APScheduler"
       ],
-      "summary": "Production-grade banking data quality pipeline featuring POPIA-compliant PII masking (SHA-256/UUID), IsolationForest anomaly detection, 8-rule fraud scoring, and Delta Lake Silver storage with a Streamlit dashboard.",
-      "live_url": "https://sa-bank-data-quality-pipeline-1.onrender.com/",
+      "summary": "Data quality pipeline on synthetic SA bank data: SA ID/Luhn validation, quarantine with reasons, 8-rule fraud scoring, circuit breaker, salted SHA-256 PII masking, Delta Lake.",
+      "results_page_url": "https://sa-bank-data-quality-pipeline-1.onrender.com/",
       "github_url": "https://github.com/ntokozo078/SA-bank-data-quality-pipeline",
-      "outcome": "Demonstrated strict data security principles and production-level fault tolerance using a 3-state circuit breaker.",
+      "outcome": "In a run of 5,000 synthetic records with errors added on purpose, 2,278 were quarantined and 2,722 written to Delta Lake. The fraud rules haven't been tested on real labelled transactions.",
       "type": "Data Engineering",
       "priority": 2
     },
     {
-      "name": "Vehicle Insurance Fraud Detection",
-      "subtitle": "Honours Machine Learning Research",
+      "name": "Entry-Level Job Market Pipeline",
+      "subtitle": "ETL and web app",
       "tech_stack": [
         "Python",
-        "XGBoost",
-        "Scikit-Learn",
-        "Pandas",
-        "Data Balancing (SMOTE)"
+        "PostgreSQL",
+        "Flask",
+        "BeautifulSoup",
+        "GitHub Actions",
+        "Render"
       ],
-      "summary": "Developing an XGBoost machine learning model to classify fraudulent versus legitimate vehicle insurance claims. Focuses on addressing heavy data imbalance and identifying highly correlative claim attributes to optimize predictive metrics like F1-Score and Precision.",
-      "outcome": "Academic research project addressing the gap in non-linear, tabular feature analysis for insurance fraud.",
+      "summary": "ETL of real entry-level tech jobs from 2 APIs (Adzuna, Remotive) and a Careers24 scraper: freshness and seniority filters, upsert to PostgreSQL, Flask site and REST API, tests in GitHub Actions.",
+      "website_url": "https://entry-job-market-pipeline.onrender.com/",
+      "github_url": "https://github.com/ntokozo078/entry-job-market-pipeline",
+      "outcome": "Two test runs on 2 November 2026 produced 231 listings. It runs on demand, not on a schedule. Remotive added no jobs in those runs.",
+      "type": "Data Engineering",
+      "priority": 3
+    },
+    {
+      "name": "Evaluating Cost-Sensitive Machine Learning for Vehicle Insurance Fraud Detection",
+      "subtitle": "Honours research, in progress",
+      "tech_stack": [
+        "Python",
+        "Scikit-Learn",
+        "Pandas"
+      ],
+      "summary": "Honours research project at the Durban University of Technology on cost-sensitive machine learning for detecting vehicle insurance fraud.",
       "type": "Machine Learning",
       "priority": 4
     },
     {
       "name": "Databricks Medallion Sales Pipeline",
-      "subtitle": "Cloud Big Data",
+      "subtitle": "Databricks",
       "tech_stack": [
         "Databricks",
         "PySpark",
         "Delta Lake",
         "Medallion Architecture"
       ],
-      "summary": "An end-to-end cloud pipeline processing sales data. Implemented a Bronze (Raw) → Silver (Cleaned) → Gold (Aggregated) workflow using PySpark and Delta Tables to ensure data quality for business reporting.",
+      "summary": "A sales data pipeline on Databricks using a Bronze, Silver and Gold workflow with PySpark and Delta tables. It also uses Delta Time Travel to restore data after a simulated accidental deletion.",
       "github_url": "https://github.com/ntokozo078/databricks-medallion-sales-pipeline",
-      "outcome": "Demonstrated mastery of modern Lakehouse architecture principles and disaster recovery using Delta Time Travel.",
-      "type": "Cloud Engineering",
-      "priority": 5
-    },
-    {
-      "name": "SA Job Market Pipeline & Tracker",
-      "subtitle": "Advanced ETL & Analytics",
-      "tech_stack": [
-        "Python",
-        "PostgreSQL",
-        "Flask",
-        "BeautifulSoup",
-        "Render Cron"
-      ],
-      "summary": "A robust daily automated pipeline that aggregates tech jobs from APIs and web scrapers. Implemented a 'Zombie Job' filter to remove expired listings, deduplication logic, and SCD Type 1 storage in PostgreSQL.",
-      "live_url": "https://devpulse-job-tracker.onrender.com",
-      "github_url": "https://github.com/ntokozo078/devpulse-job-tracker",
-      "outcome": "Automated the entire data lifecycle from ingestion to visualization, creating a clean historical dataset of the SA tech market tracking 967+ active jobs.",
       "type": "Data Engineering",
-      "priority": 6
+      "priority": 5
     }
   ],
   "education": [
@@ -283,32 +248,29 @@
   ],
   "goals": {
     "career_targets": [
-      "Graduate Data Engineer (2027 Intake)",
+      "Graduate Data Engineer (2027 intake)",
       "Junior Data Engineer",
       "Analytics Engineer"
     ],
     "short_term": [
-      "Secure a 2027 graduate/internship role (e.g., Capitec, Synthesis, BBD)",
-      "Complete Honours ML research on vehicle insurance fraud detection",
-      "Integrate dbt into existing pipeline projects"
+      "Secure a 2027 graduate or junior data engineering role",
+      "Complete the Honours research on vehicle insurance fraud detection",
+      "Use dbt in a pipeline project"
     ],
     "long_term": [
-      "Become a Senior Cloud Data Architect",
-      "Architect scalable Lakehouse solutions and enterprise data platforms",
-      "Lead data engineering initiatives for enterprise tech or financial firms"
+      "Become a senior cloud data engineer or architect"
     ]
   },
   "strengths": [
-    "Bridging Software Engineering & Data Engineering",
-    "Building real, deployed applications",
-    "Designing highly scalable Cloud Data Workflows (Fabric/Databricks/Azure)",
-    "Comfortable with end-to-end data lifecycle management",
+    "Bridging software engineering and data engineering",
+    "Building applications and deploying them",
+    "Documenting pipelines honestly: limitations, real run results and tests",
     "Fast learner with a research-driven mindset",
     "Independent problem solver"
   ],
   "areas_for_growth": [
-    "Deploying Machine Learning models to production (MLOps)",
-    "Implement a real-time streaming project (Kafka)",
+    "Deploying machine learning models (MLOps)",
+    "A streaming project on real data with Kafka",
     "Advanced SQL performance tuning"
   ]
 }
